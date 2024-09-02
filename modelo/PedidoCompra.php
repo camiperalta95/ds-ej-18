@@ -14,37 +14,31 @@ class PedidoCompra {
         echo 'Pedido de compra <br>';
         echo '-----------------------<br>';
 
-        echo 'Fecha:' . $this->Fecha . '<br>';
-        echo 'Proveedor:' . $this->Proveedor . '<br>';
-        echo 'Fecha de entrega estimada:' . $this->FechaEntregaEstimada . '<br>';
-        echo 'Costo total:' . $this->CostoTotal . '<br>';
-        echo 'Pedido cerrado:' . $this->PedidoCerrado . '<br>';
-
-        echo '------------------------<br>';
-        echo 'Proveedor: <br>';
-        echo '------------------------<br>';
-        echo 'Id:' . $this->Proveedor->Id . '<br>';
+        echo 'Fecha : '.$this->Fecha.'<br>';
+        echo 'Id del proveedor:' . $this->Proveedor->Id . '<br>';
         echo 'Descripcion:' . $this->Proveedor->Descripcion . '<br>';
-
+        echo 'Fecha de entrega estimada : '.$this->FechaEntregaEstimada.'<br>';
+        echo 'Costo total : '.$this->CostoTotal.'<br>';
+        echo 'Pedido cerrado : '.$this->PedidoCerrado.'<br>';
+       
+        
         echo '---------------------------<br>';
         echo 'Lista linea de compra: <br>';
         echo '<br>';
         
-        foreach ($this->ListLineaCompra as $Lista){
+        foreach ($this->ListLineaCompra as $LineaCompra){
 
-            echo '<br>';
-            echo 'Producto:' . $Lista->Producto . '<br>';
-            echo 'Cantidad:' . $Lista->Cantidad . '<br>';
-            echo 'Costo:' . $Lista->Costo . '<br>';
-            echo 'Entregado:' . $Lista->FueEntregado . '<br>';
+          
+            echo 'Codigo : '.$LineaCompra->Producto->Codigo.'<br>';
+            echo 'Descripcion : '.$LineaCompra->Producto->Descripcion.'<br>';
+            echo 'Precio de venta : '.$LineaCompra->Producto->PrecioVenta.'<br>';
+            echo 'Cantidad  : '.$LineaCompra->Cantidad.'<br>';
+            echo 'Costo Unitario  : '.$LineaCompra->CostoUnitario.'<br>';
+            echo 'Fue Entregado  : '.$LineaCompra->FueEntregado.'<br>';
+    
             
-            echo '<br>';
-            echo '-----------------------<br>';
-            echo 'Producto: <br>';
-            echo 'Descripcion:' . $this->Producto->Descripcion . '<br>';
-            echo 'Precio de venta:' . $this->Producto->PrecioVenta . '<br>';
 
-        }
+         }
     }
 
 
